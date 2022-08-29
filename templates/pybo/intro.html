@@ -3,7 +3,7 @@
 <!-- 답변 수정-->
 <div class="container my-3">
     <body onload="loaded()" onkeydown="keydown()" onkeyup="keyup()">
-    <canvas width="1000" height="500" style="border: 2px solid black;" id="c1"></canvas>
+    <canvas width="1500" height="700" style="border: 2px solid black;" id="c1"></canvas>
     </body>
 </div>
  <script>
@@ -19,13 +19,13 @@
 
         // 전역변수로서 이미지 객체 생성
         var imgChar= new Image();
-        imgChar.src="/static/images/dog.jpg";
+        imgChar.src="/static/images/sonny.png";
         var imgBg= new Image();
-        imgBg.src="/static/images/bg.jpg";
+        imgBg.src="/static/images/bg2.jpg";
 
         // 플레이어 캐릭터의 중심좌표
         var x=200, y=250; //정 가운데로 위치
-        var w=40, h=40; //플레이어 이미지의 절반 사이즈
+        var w=35, h=45; //플레이어 이미지의 절반 사이즈
 
         function loaded(){
             canvas= document.getElementById('c1');
@@ -49,14 +49,14 @@
         }
         function drawAll(){
             //배경 그리기
-            context.drawImage(imgBg,0,0,1000,500);
+            context.drawImage(imgBg,0,0,1500,700);
             //플레이어 그리기
             context.drawImage(imgChar,x-w,y-h,w*3,h*3);
 
             // 키 코드값 글씨 그리기
-            context.fillStyle="white";
-            context.font="30px sans-serif";
-            context.fillText(keycode, 10, 40);
+<!--            context.fillStyle="white";-->
+<!--            context.font="30px sans-serif";-->
+<!--            context.fillText(keycode, 10, 40);-->
         }
 
         function keydown(){
