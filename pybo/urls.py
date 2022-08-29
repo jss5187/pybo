@@ -1,6 +1,8 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 
-from .views import base_views, question_views, answer_views
+from .views import base_views, question_views, answer_views, intro_views
 
 app_name = 'pybo'
 
@@ -26,4 +28,9 @@ urlpatterns = [
          answer_views.answer_modify, name='answer_modify'),
     path('answer/delete/<int:answer_id>/',
          answer_views.answer_delete, name='answer_delete'),
+
+    path('intro/',
+         intro_views.index, name='intro_index'),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
