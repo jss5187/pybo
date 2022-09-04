@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
-from .views import base_views, question_views, answer_views, intro_views
+from .views import base_views, question_views, answer_views, intro_views, pokemon
 
 app_name = 'pybo'
 
@@ -31,6 +31,9 @@ urlpatterns = [
 
     path('intro/',
          intro_views.index, name='intro_index'),
+
+    path('pokemon/',
+         pokemon.index, name='pokemon'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
